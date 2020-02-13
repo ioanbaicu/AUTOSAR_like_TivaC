@@ -1,0 +1,1151 @@
+******************************************************************************
+                  TI ARM Linker PC v18.12.3                    
+******************************************************************************
+>> Linked Tue Dec  3 17:20:33 2019
+
+OUTPUT FILE NAME:   <ECU2_integration.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00008c41
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  000096d0  00036930  R  X
+  SRAM                  20000000   00008000  00000e4d  000071b3  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000096d0   000096d0    r-x
+  00000000    00000000    00000268   00000268    r-- .intvecs
+  00000268    00000268    00008a88   00008a88    r-x .text
+  00008cf0    00008cf0    000008d0   000008d0    r-- .const
+  000095c0    000095c0    00000110   00000110    r-- .cinit
+20000000    20000000    00000e50   00000000    rw-
+  20000000    20000000    0000026c   00000000    rw- .vtable
+  2000026c    2000026c    0000059c   00000000    rw- .bss
+  20000808    20000808    00000445   00000000    rw- .data
+  20000c50    20000c50    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000268     
+                  00000000    00000268     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    00000268    00008a88     
+                  00000268    000016ac     Can.obj (.text)
+                  00001914    00000f80     sysctl.obj (.text)
+                  00002894    00000c58     Helper_Functions.obj (.text)
+                  000034ec    00000b94     gpio.obj (.text)
+                  00004080    00000a28     can.obj (.text)
+                  00004aa8    00000974     Com.obj (.text)
+                  0000541c    00000718     pwm.obj (.text)
+                  00005b34    00000670     CanIf.obj (.text)
+                  000061a4    0000066c     cantp.obj (.text)
+                  00006810    0000063c     task.obj (.text)
+                  00006e4c    00000598     alarm.obj (.text)
+                  000073e4    00000590     Com_Buffer.obj (.text)
+                  00007974    000003c0     interrupt.obj (.text)
+                  00007d34    000001ec     event.obj (.text)
+                  00007f20    000001c8     speed_control.obj (.text)
+                  000080e8    00000164     PduR_helper.obj (.text)
+                  0000824c    0000013c     port.obj (.text)
+                  00008388    0000012a     list.obj (.text)
+                  000084b2    00000002     --HOLE-- [fill = 0]
+                  000084b4    00000118     PduR.obj (.text)
+                  000085cc    000000e4     Rte_PWMs.obj (.text)
+                  000086b0    000000da     portasm.obj (.text)
+                  0000878a    00000002     --HOLE-- [fill = 0]
+                  0000878c    000000b0     direction_control.obj (.text)
+                  0000883c    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  000088d8    0000007a                                   : memset_t2.asm.obj (.text)
+                  00008952    00000072     Com_helper.obj (.text)
+                  000089c4    00000070     Timer0A.obj (.text)
+                  00008a34    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00008a9c    0000005c     main.obj (.text)
+                  00008af8    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.asm.obj (.text)
+                  00008b40    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00008b84    00000044                                   : fd_tou_t2.asm.obj (.text)
+                  00008bc8    0000003e     cpu.obj (.text)
+                  00008c06    00000002     --HOLE-- [fill = 0]
+                  00008c08    00000038     Rte_CanMessage.obj (.text)
+                  00008c40    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00008c74    00000030     Dio.obj (.text)
+                  00008ca4    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : ll_mul_t2.asm.obj (.text)
+                  00008cbc    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00008cca    0000000c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  00008cd6    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00008ce2    00000006     sysctl.obj (.text:SysCtlDelay)
+                  00008ce8    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00008cec    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00008cf0    000008d0     
+                  00008cf0    000001b0     sysctl.obj (.const:g_pppui32XTALtoVCO)
+                  00008ea0    000000f4     Can.obj (.const:CanContainer)
+                  00008f94    000000f4     Can.obj (.const:MailboxCfg_MAP)
+                  00009088    000000d8     gpio.obj (.const:g_ppui32GPIOIntMapSnowflake)
+                  00009160    000000c0     gpio.obj (.const:g_ppui32GPIOIntMapBlizzard)
+                  00009220    0000009c     interrupt.obj (.const:g_pui32Regs)
+                  000092bc    00000090     gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  0000934c    00000004     port.obj (.const)
+                  00009350    00000080     CanTp_Cfg.obj (.const:CanTp_RxNSdu)
+                  000093d0    0000006c     sysctl.obj (.const:g_pui32Xtals)
+                  0000943c    00000004     --HOLE-- [fill = 0]
+                  00009440    00000050     CanTp_Cfg.obj (.const:CanTp_TxNSdu)
+                  00009490    00000030     sysctl.obj (.const:g_sXTALtoMEMTIM)
+                  000094c0    0000002c     Lcfg.obj (.const)
+                  000094ec    00000004     --HOLE-- [fill = 0]
+                  000094f0    00000020     CanTp_Cfg.obj (.const:CanTp_Config)
+                  00009510    00000020     interrupt.obj (.const:g_pui32Priority)
+                  00009530    00000020     can.obj (.const:g_ui16CANBitValues)
+                  00009550    00000018     Can.obj (.const:McuPerClockConfigData)
+                  00009568    00000014     interrupt.obj (.const:g_pui32Dii16Regs)
+                  0000957c    00000014     interrupt.obj (.const:g_pui32EnRegs)
+                  00009590    00000014     interrupt.obj (.const:g_pui32PendRegs)
+                  000095a4    00000014     interrupt.obj (.const:g_pui32UnpendRegs)
+                  000095b8    00000008     sysctl.obj (.const:g_pui32VCOFrequencies)
+
+.cinit     0    000095c0    00000110     
+                  000095c0    000000d6     (.cinit..data.load) [load image, compression = lzss]
+                  00009696    00000002     --HOLE-- [fill = 0]
+                  00009698    0000000c     (__TI_handler_table)
+                  000096a4    00000004     --HOLE-- [fill = 0]
+                  000096a8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000096b0    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  000096b8    00000018     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.vtable    0    20000000    0000026c     UNINITIALIZED
+                  20000000    0000026c     interrupt.obj (.vtable)
+
+.bss       0    2000026c    0000059c     UNINITIALIZED
+                  2000026c    00000200     Lcfg.obj (.bss:IdleStack)
+                  2000046c    00000200     Lcfg.obj (.bss:TaskStack1)
+                  2000066c    00000064     task.obj (.bss:ReadyTasksLists)
+                  200006d0    00000038     (.common:Com_Asu_IPdu)
+                  20000708    00000024     (.common:Message_Confirmation)
+                  2000072c    00000014     task.obj (.bss:DelayedTaskList1)
+                  20000740    00000014     task.obj (.bss:DelayedTaskList2)
+                  20000754    00000014     task.obj (.bss:SuspendedTaskList)
+                  20000768    00000014     (.common:CounterList)
+                  2000077c    00000014     (.common:DormantAlarmList)
+                  20000790    00000014     (.common:msg)
+                  200007a4    0000000c     PduR.obj (.bss:info$1)
+                  200007b0    00000008     task.obj (.bss)
+                  200007b8    00000008     (.common:msgData)
+                  200007c0    00000007     (.common:CanIf_Global)
+                  200007c7    00000004     Can.obj (.bss:Can_ControllerMode)
+                  200007cb    00000004     Can.obj (.bss:ErrorState$3)
+                  200007cf    00000004     Can.obj (.bss:IntDisableCount)
+                  200007d3    00000004     Can.obj (.bss:IntEnableCount)
+                  200007d7    00000004     Can.obj (.bss:Int_disable_in_stop_mode)
+                  200007db    00000004     Can.obj (.bss:Int_enable_in_start_mode)
+                  200007df    00000001     Can.obj (.bss)
+                  200007e0    00000004     (.common:CanIfPrivateCfgInst)
+                  200007e4    00000004     (.common:CanIfRxPduCfg_Arr)
+                  200007e8    00000004     (.common:CanIf_ConfigPtr)
+                  200007ec    00000004     (.common:ComConfig)
+                  200007f0    00000004     (.common:Direction)
+                  200007f4    00000004     (.common:Speed)
+                  200007f8    00000004     (.common:break_command)
+                  200007fc    00000004     (.common:ui32Load)
+                  20000800    00000004     (.common:ui32PWMClock)
+                  20000804    00000001     (.common:errFlag)
+                  20000805    00000001     (.common:rxFlag)
+                  20000806    00000001     (.common:ui32Adjust_Direction)
+                  20000807    00000001     (.common:ui32Adjust_Speed)
+
+.data      0    20000808    00000445     UNINITIALIZED
+                  20000808    00000158     CanTpRuntime.obj (.data:CanTpRunTimeData)
+                  20000960    000000f0     Lcfg.obj (.data:AlarmStruct)
+                  20000a50    000000a0     Lcfg.obj (.data:TaskStruct)
+                  20000af0    0000003c     Lcfg.obj (.data:CounterStruct)
+                  20000b2c    0000002c     task.obj (.data)
+                  20000b58    00000020     Lcfg.obj (.data:EventsInTask)
+                  20000b78    0000001c     PduR_helper.obj (.data:real_CanIf)
+                  20000b94    0000001c     PduR_helper.obj (.data:virtual_CanIf)
+                  20000bb0    00000014     PduR_helper.obj (.data:real_com)
+                  20000bc4    00000014     PduR_helper.obj (.data:virtual_com)
+                  20000bd8    00000010     PduR_helper.obj (.data:Com_type)
+                  20000be8    00000010     PduR_helper.obj (.data:real_CanTp_rx)
+                  20000bf8    00000010     PduR_helper.obj (.data:virtual_CanTp_rx)
+                  20000c08    0000000c     Com_Asu_Cfg.obj (.data:ComAsuConfiguration)
+                  20000c14    00000008     alarm.obj (.data)
+                  20000c1c    00000008     PduR_helper.obj (.data:real_CanTp_tx)
+                  20000c24    00000008     PduR_helper.obj (.data:virtual_CanTp_tx)
+                  20000c2c    00000004     Com.obj (.data)
+                  20000c30    00000004     CanIf.obj (.data:canif_Comfrimation_Value)
+                  20000c34    00000004     CanIf.obj (.data:canif_cantp_value)
+                  20000c38    00000004     port.obj (.data)
+                  20000c3c    00000003     Can.obj (.data)
+                  20000c3f    00000002     Helper_Functions.obj (.data:canif_ids)
+                  20000c41    00000002     Helper_Functions.obj (.data:cantp_cainf_FC)
+                  20000c43    00000002     Helper_Functions.obj (.data:cantp_com_copy_tx)
+                  20000c45    00000002     Helper_Functions.obj (.data:cantp_com_rx_or_copy)
+                  20000c47    00000002     Com.obj (.data:com_pdur)
+                  20000c49    00000002     Can.obj (.data:state_transition_flag)
+                  20000c4b    00000001     CanIf.obj (.data:canif_PduR_Value)
+                  20000c4c    00000001     speed_control.obj (.data)
+
+.stack     0    20000c50    00000200     UNINITIALIZED
+                  20000c50    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000c54    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                         code    ro data   rw data
+       ------                         ----    -------   -------
+    .\
+       tm4c123gh6pm_startup_ccs.obj   12      616       0      
+       speed_control.obj              456     0         10     
+       direction_control.obj          176     0         43     
+       Timer0A.obj                    112     0         0      
+       main.obj                       92      0         0      
+       Dio.obj                        48      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         896     616       53     
+                                                               
+    .\OS\
+       task.obj                       1596    0         212    
+       Lcfg.obj                       0       44        1516   
+       alarm.obj                      1432    0         48     
+       event.obj                      492     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         3520    44        1776   
+                                                               
+    .\Rte\
+       Rte_PWMs.obj                   228     0         0      
+       Rte_CanMessage.obj             56      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         284     0         0      
+                                                               
+    .\driverlib\
+       sysctl.obj                     3974    596       0      
+       gpio.obj                       2964    552       0      
+       can.obj                        2600    32        0      
+       interrupt.obj                  960     268       620    
+       pwm.obj                        1816    0         0      
+       cpu.obj                        62      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         12376   1448      620    
+                                                               
+    .\freertos\
+       list.obj                       298     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         298     0         0      
+                                                               
+    .\portable\
+       port.obj                       316     4         4      
+       portasm.obj                    218     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         534     4         4      
+                                                               
+    .\source\
+       Can.obj                        5804    512       66     
+       Helper_Functions.obj           3160    0         8      
+       Com.obj                        2420    0         10     
+       CanIf.obj                      1648    0         28     
+       cantp.obj                      1644    0         0      
+       Com_Buffer.obj                 1424    0         0      
+       PduR_helper.obj                356     0         160    
+       CanTpRuntime.obj               0       0         344    
+       PduR.obj                       280     0         12     
+       CanTp_Cfg.obj                  0       240       0      
+       Com_helper.obj                 114     0         0      
+       Com_Asu_Cfg.obj                0       0         68     
+    +--+------------------------------+-------+---------+---------+
+       Total:                         16850   752       696    
+                                                               
+    C:\ti\ccs920\ccs\tools\compiler\ti-cgt-arm_18.12.3.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj              156     0         0      
+       memset_t2.asm.obj              122     0         0      
+       copy_decompress_lzss.c.obj     104     0         0      
+       fd_toi_t2.asm.obj              72      0         0      
+       autoinit.c.obj                 68      0         0      
+       fd_tou_t2.asm.obj              68      0         0      
+       boot_cortex_m.c.obj            52      0         0      
+       ll_mul_t2.asm.obj              24      0         0      
+       copy_decompress_none.c.obj     14      0         0      
+       copy_zero_init.c.obj           12      0         0      
+       exit.c.obj                     4       0         0      
+       pre_init.c.obj                 4       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         700     0         0      
+                                                               
+       Stack:                         0       0         512    
+       Linker Generated:              0       266       0      
+    +--+------------------------------+-------+---------+---------+
+       Grand Total:                   35458   3130      3661   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000096b8 records: 3, size/record: 8, table size: 24
+	.data: load addr=000095c0, load size=000000d6 bytes, run addr=20000808, run size=00000445 bytes, compression=lzss
+	.bss: load addr=000096a8, load size=00000008 bytes, run addr=2000026c, run size=0000059c bytes, compression=zero_init
+	.vtable: load addr=000096b0, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00009698 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                              
+-------   ----                              
+00006c75  ActivateTask                      
+00006979  AddTaskToReadyList                
+0000878d  Adjust_direction                  
+00007f21  Adjust_speed                      
+00007009  AlarmHook                         
+20000960  AlarmStruct                       
+000094e0  BSW_Alarm_alarm3                  
+000094e4  BSW_Alarm_alarm4                  
+000094e8  BSW_Alarm_alarm5                  
+000094d0  BSW_Event_CanTp_MainFunction      
+000094c8  BSW_Event_Com_MainFunctionRx      
+000094cc  BSW_Event_Com_MainFunctionTx      
+000069c7  BlockTask                         
+00008ced  C$$EXIT                           
+00004291  CANBitRateSet                     
+00004229  CANBitTimingGet                   
+0000435d  CANBitTimingSet                   
+00004215  CANDisable                        
+00004201  CANEnable                         
+000045a7  CANErrCntrGet                     
+00004185  CANInit                           
+00004499  CANIntClear                       
+00004439  CANIntDisable                     
+00004423  CANIntEnable                      
+0000176d  CANIntHandler                     
+000043eb  CANIntRegister                    
+0000444f  CANIntStatus                      
+00004409  CANIntUnregister                  
+00004a79  CANMessageClear                   
+0000486f  CANMessageGet                     
+000045dd  CANMessageSet                     
+00004505  CANRetryGet                       
+000044d3  CANRetrySet                       
+00004521  CANStatusGet                      
+00008bfd  CPUbasepriGet                     
+00008bef  CPUbasepriSet                     
+00008bc9  CPUcpsid                          
+00008bdf  CPUcpsie                          
+00008bd5  CPUprimask                        
+00008beb  CPUwfi                            
+00001395  Can0_InterruptHandler             
+0000158d  Can1_InterruptHandler             
+00008ea0  CanContainer                      
+200007e0  CanIfPrivateCfgInst               
+200007e4  CanIfRxPduCfg_Arr                 
+200007e8  CanIf_ConfigPtr                   
+00005e3d  CanIf_FindHrhChannel              
+00005eb9  CanIf_FindRxPduEntry              
+00005d0d  CanIf_FindTxPduEntry              
+00005cc1  CanIf_GetControllerMode           
+00005bfb  CanIf_GetPduMode                  
+200007c0  CanIf_Global                      
+00005b35  CanIf_Init                        
+00005f95  CanIf_RxIndication                
+00005c3f  CanIf_SetControllerMode           
+00005b89  CanIf_SetPduMode                  
+00005d75  CanIf_Transmit                    
+00006125  CanIf_TxConfirmation              
+00008c09  CanReceiveMessage                 
+20000808  CanTpRunTimeData                  
+000094f0  CanTp_Config                      
+00006325  CanTp_Init                        
+00006561  CanTp_MainFunction                
+0000622f  CanTp_RxIndication                
+00009350  CanTp_RxNSdu                      
+0000654b  CanTp_Shutdown                    
+000063f1  CanTp_Transmit                    
+000067bd  CanTp_TxConfirmation              
+00009440  CanTp_TxNSdu                      
+00001831  Can_DeInit                        
+00000ce5  Can_DisableControllerInterrupts   
+00000d8d  Can_EnableControllerInterrupts    
+0000037d  Can_GetControllerErrorState       
+0000131d  Can_GetControllerMode             
+000017b5  Can_Init                          
+00000283  Can_MainFunction_Mode             
+00000b85  Can_SetBaudrate                   
+00000e41  Can_SetControllerMode             
+00000489  Can_Write                         
+00007391  CancelAlarm                       
+00006d6d  ChainTask                         
+00007d35  CheckEventTask                    
+00007ed7  ClearEvent                        
+20000c08  ComAsuConfiguration               
+200007ec  ComConfig                         
+200006d0  Com_Asu_IPdu                      
+000050ad  Com_CopyRxData                    
+00005011  Com_CopyTxData                    
+00004aa9  Com_Init                          
+00004c57  Com_MainFunctionRx                
+00004d95  Com_MainFunctionTx                
+000073e5  Com_PackSignalsToPdu              
+0000771d  Com_ReadSignalDataFromPduBuffer   
+0000793d  Com_ReadSignalDataFromSignalBuffer
+00004fb3  Com_ReceiveSignal                 
+00005209  Com_RxIndication                  
+00004ecd  Com_SendSignal                    
+00005273  Com_StartOfReception              
+000052ff  Com_TpRxIndication                
+00005363  Com_TpTxConfirmation              
+00005141  Com_TriggerIPDUSend               
+00007449  Com_UnPackSignalsFromPdu          
+000074ad  Com_WriteSignalDataToPduBuffer    
+00007909  Com_WriteSignalDataToSignalBuffer 
+20000bd8  Com_type                          
+00006ebf  CounterIncrementHook              
+20000768  CounterList                       
+20000af0  CounterStruct                     
+200007f0  Direction                         
+2000077c  DormantAlarmList                  
+20000b58  EventsInTask                      
+00004059  GPIOADCTriggerDisable             
+0000403b  GPIOADCTriggerEnable              
+0000401d  GPIODMATriggerDisable             
+00003fff  GPIODMATriggerEnable              
+000035a7  GPIODirModeGet                    
+0000354b  GPIODirModeSet                    
+00003b0f  GPIOIntClear                      
+00003ad3  GPIOIntDisable                    
+00003ab9  GPIOIntEnable                     
+00003b23  GPIOIntRegister                   
+00003b5b  GPIOIntRegisterPin                
+00003aed  GPIOIntStatus                     
+00003697  GPIOIntTypeGet                    
+000035f3  GPIOIntTypeSet                    
+00003b41  GPIOIntUnregister                 
+00003b89  GPIOIntUnregisterPin              
+00003967  GPIOPadConfigGet                  
+0000372d  GPIOPadConfigSet                  
+00003fa1  GPIOPinConfigure                  
+00003bad  GPIOPinRead                       
+00003be5  GPIOPinTypeADC                    
+00003c09  GPIOPinTypeCAN                    
+00003c2d  GPIOPinTypeComparator             
+00003c51  GPIOPinTypeComparatorOutput       
+00003c75  GPIOPinTypeDIVSCLK                
+00003c99  GPIOPinTypeEPI                    
+00003cbd  GPIOPinTypeEthernetLED            
+00003ce1  GPIOPinTypeEthernetMII            
+00003d05  GPIOPinTypeGPIOInput              
+00003d29  GPIOPinTypeGPIOOutput             
+00003d4d  GPIOPinTypeGPIOOutputOD           
+00003d71  GPIOPinTypeHibernateRTCCLK        
+00003d95  GPIOPinTypeI2C                    
+00003db9  GPIOPinTypeI2CSCL                 
+00003ddd  GPIOPinTypeLCD                    
+00003e01  GPIOPinTypeOneWire                
+00003e25  GPIOPinTypePWM                    
+00003e49  GPIOPinTypeQEI                    
+00003e6d  GPIOPinTypeSSI                    
+00003e91  GPIOPinTypeTimer                  
+00003eb5  GPIOPinTypeTrace                  
+00003ed9  GPIOPinTypeUART                   
+00003efd  GPIOPinTypeUSBAnalog              
+00003f21  GPIOPinTypeUSBDigital             
+00003f45  GPIOPinTypeWakeHigh               
+00003f6b  GPIOPinTypeWakeLow                
+00003f91  GPIOPinWakeStatus                 
+00003bc5  GPIOPinWrite                      
+00007195  GetAlarm                          
+00007215  GetAlarmBase                      
+00007e69  GetEvent                          
+00006da9  GetTaskID                         
+00006dcd  GetTaskState                      
+00005f49  Get_User_RxIndication             
+00005f23  Get_User_RxIndication_Name        
+00008abd  INTERNAL_OS_T1                    
+00006811  IdleTask                          
+00006fe5  InitAlarm                         
+00006ea1  InitCounter                       
+00008c75  InitGPIO                          
+000069f1  InitTask                          
+00007b35  IntDisable                        
+00007ac3  IntEnable                         
+00007ba7  IntIsEnabled                      
+00007987  IntMasterDisable                  
+00007977  IntMasterEnable                   
+00007c9d  IntPendClear                      
+00007c2d  IntPendSet                        
+00007a9f  IntPriorityGet                    
+00007a17  IntPriorityGroupingGet            
+000079fd  IntPriorityGroupingSet            
+00007cf7  IntPriorityMaskGet                
+00007ceb  IntPriorityMaskSet                
+00007a4f  IntPrioritySet                    
+00007997  IntRegister                       
+00007cff  IntTrigger                        
+000079e9  IntUnregister                     
+00008f94  MailboxCfg_MAP                    
+00009550  McuPerClockConfigData             
+20000708  Message_Confirmation              
+00008ab5  OS_T1                             
+00005a97  PWMClockGet                       
+00005a77  PWMClockSet                       
+000055c1  PWMDeadBandDisable                
+00005589  PWMDeadBandEnable                 
+0000593d  PWMFaultIntClear                  
+0000596f  PWMFaultIntClearExt               
+00005857  PWMFaultIntRegister               
+00005875  PWMFaultIntUnregister             
+0000541d  PWMGenConfigure                   
+000054db  PWMGenDisable                     
+000054c1  PWMGenEnable                      
+00005a41  PWMGenFaultClear                  
+0000598d  PWMGenFaultConfigure              
+00005a0b  PWMGenFaultStatus                 
+000059e7  PWMGenFaultTriggerGet             
+000059bd  PWMGenFaultTriggerSet             
+000058f5  PWMGenIntClear                    
+000057c9  PWMGenIntRegister                 
+000058cb  PWMGenIntStatus                   
+000058ad  PWMGenIntTrigDisable              
+0000588f  PWMGenIntTrigEnable               
+000057f1  PWMGenIntUnregister               
+00005497  PWMGenPeriodGet                   
+00005467  PWMGenPeriodSet                   
+000085d7  PWMInit                           
+00005925  PWMIntDisable                     
+0000590d  PWMIntEnable                      
+0000594f  PWMIntStatus                      
+00005697  PWMOutputFault                    
+00005665  PWMOutputFaultLevel               
+00005633  PWMOutputInvert                   
+00005601  PWMOutputState                    
+00005ac1  PWMOutputUpdateMode               
+0000553f  PWMPulseWidthGet                  
+000054f5  PWMPulseWidthSet                  
+000055ef  PWMSyncTimeBase                   
+000055dd  PWMSyncUpdate                     
+0000850b  PduR_CanIfRxIndication            
+00008529  PduR_CanTpCopyRxData              
+00008599  PduR_CanTpCopyTxData              
+0000854f  PduR_CanTpRxIndication            
+0000856f  PduR_CanTpStartOfReception        
+000084b5  PduR_ComTransmit                  
+000094d8  RTE_Alarm_alarm1                  
+000094dc  RTE_Alarm_alarm2                  
+000094c0  RTE_Event_HeatRegulatorEvent      
+000094c4  RTE_Event_HeatingControllerEvent  
+00008cd7  ResetISR                          
+0000730d  SetAbsAlarm                       
+00007d75  SetEvent                          
+0000724d  SetRelAlarm                       
+000085cd  SimpleDelay                       
+200007f4  Speed                             
+00008689  SpeedAndDirection                 
+00006b09  StartOS                           
+00002851  SysCtlAltClkConfig                
+00001f79  SysCtlClockFreqSet                
+00002441  SysCtlClockGet                    
+00002835  SysCtlClockOutConfig              
+00002271  SysCtlClockSet                    
+00001e7d  SysCtlDeepSleep                   
+00002605  SysCtlDeepSleepClockConfigSet     
+000025e7  SysCtlDeepSleepClockSet           
+00001e5d  SysCtlDeepSleepPowerSet           
+00008ce3  SysCtlDelay                       
+00001a0b  SysCtlFlashSectorSizeGet          
+000019df  SysCtlFlashSizeGet                
+000026db  SysCtlGPIOAHBDisable              
+000026bf  SysCtlGPIOAHBEnable               
+00001df1  SysCtlIntClear                    
+00001dd9  SysCtlIntDisable                  
+00001dc5  SysCtlIntEnable                   
+00001d9d  SysCtlIntRegister                 
+00001e01  SysCtlIntStatus                   
+00001db5  SysCtlIntUnregister               
+00001e43  SysCtlLDODeepSleepGet             
+00001e33  SysCtlLDODeepSleepSet             
+00001e2d  SysCtlLDOSleepGet                 
+00001e1d  SysCtlLDOSleepSet                 
+00001eb3  SysCtlMOSCConfigSet               
+00002819  SysCtlNMIClear                    
+00002805  SysCtlNMIStatus                   
+00001ec9  SysCtlPIOSCCalibrate              
+000026a9  SysCtlPWMClockGet                 
+0000268f  SysCtlPWMClockSet                 
+00001d49  SysCtlPeripheralClockGating       
+00001d01  SysCtlPeripheralDeepSleepDisable  
+00001cb1  SysCtlPeripheralDeepSleepEnable   
+00001bed  SysCtlPeripheralDisable           
+00001bb1  SysCtlPeripheralEnable            
+00001aed  SysCtlPeripheralPowerOff          
+00001ab1  SysCtlPeripheralPowerOn           
+00001a31  SysCtlPeripheralPresent           
+00001a71  SysCtlPeripheralReady             
+00001b29  SysCtlPeripheralReset             
+00001c75  SysCtlPeripheralSleepDisable      
+00001c31  SysCtlPeripheralSleepEnable       
+00001e6d  SysCtlReset                       
+00001f29  SysCtlResetBehaviorGet            
+00001f19  SysCtlResetBehaviorSet            
+00001e9f  SysCtlResetCauseClear             
+00001e99  SysCtlResetCauseGet               
+000019d5  SysCtlSRAMSizeGet                 
+00001e75  SysCtlSleep                       
+00001e49  SysCtlSleepPowerSet               
+00002703  SysCtlUSBPLLDisable               
+000026f7  SysCtlUSBPLLEnable                
+00002749  SysCtlVCOGet                      
+00002731  SysCtlVoltageEventClear           
+00002715  SysCtlVoltageEventConfig          
+00002725  SysCtlVoltageEventStatus          
+000094d4  T1                                
+20000a50  TaskStruct                        
+00006cc1  TerminateTask                     
+00008a0b  Timer0A_Handler                   
+000089c5  Timer0A_Init                      
+00007e09  WaitEvent                         
+20000e50  __STACK_END                       
+00000200  __STACK_SIZE                      
+20000e50  __STACK_TOP                       
+000096b8  __TI_CINIT_Base                   
+000096d0  __TI_CINIT_Limit                  
+00009698  __TI_Handler_Table_Base           
+000096a4  __TI_Handler_Table_Limit          
+00008b41  __TI_auto_init_nobinit_nopinit    
+00008a35  __TI_decompress_lzss              
+00008cbd  __TI_decompress_none              
+ffffffff  __TI_pprof_out_hndl               
+ffffffff  __TI_prof_data_size               
+ffffffff  __TI_prof_data_start              
+00000000  __TI_static_base__                
+00008ccb  __TI_zero_init                    
+00008af9  __aeabi_d2iz                      
+00008b85  __aeabi_d2uiz                     
+00008ca5  __aeabi_lmul                      
+000088d9  __aeabi_memclr                    
+000088d9  __aeabi_memclr4                   
+000088d9  __aeabi_memclr8                   
+0000883d  __aeabi_memcpy                    
+0000883d  __aeabi_memcpy4                   
+0000883d  __aeabi_memcpy8                   
+000088db  __aeabi_memset                    
+000088db  __aeabi_memset4                   
+000088db  __aeabi_memset8                   
+ffffffff  __binit__                         
+ffffffff  __c_args__                        
+UNDEFED   __mpu_init                        
+20000c50  __stack                           
+00008c41  _c_int00_noargs                   
+UNDEFED   _system_post_cinit                
+00008ce9  _system_pre_init                  
+00008ced  abort                             
+ffffffff  binit                             
+200007f8  break_command                     
+00002b81  calcRequiredProtocolFrameType     
+0000290f  canReceivePaddingHelper           
+00002895  canTansmitPaddingHelper           
+20000c30  canif_Comfrimation_Value          
+20000c4b  canif_PduR_Value                  
+20000c34  canif_cantp_value                 
+20000c3f  canif_ids                         
+20000c41  cantp_cainf_FC                    
+20000c43  cantp_com_copy_tx                 
+20000c45  cantp_com_rx_or_copy              
+20000c47  com_pdur                          
+000029f9  copySegmentToLocalRxBuffer        
+00002995  copySegmentToPduRRxBuffer         
+20000804  errFlag                           
+20000000  g_pfnRAMVectors                   
+00000000  g_pfnVectors                      
+00002a5b  getFrameType                      
+00002af9  getPduLength                      
+000080e9  get_ID                            
+000081df  get_type                          
+00002f27  handleConsecutiveFrame            
+00002cef  handleFirstFrame                  
+00002e5b  handleFlowControlFrame            
+00003113  handleNextTxFrameSent             
+00002be9  handleSingleFrame                 
+000061e7  initRx15765RuntimeData            
+000061a5  initTx15765RuntimeData            
+00008a9d  main                              
+0000883d  memcpy                            
+000088e1  memset                            
+20000790  msg                               
+200007b8  msgData                           
+0000896d  power                             
+20000c4c  previous_command                  
+20000b2c  pxCurrentTCB                      
+0000824d  pxPortInitialiseStack             
+20000b78  real_CanIf                        
+20000be8  real_CanTp_rx                     
+20000c1c  real_CanTp_tx                     
+20000bb0  real_com                          
+20000805  rxFlag                            
+00003221  sendFlowControlFrame              
+0000336f  sendNextTxFrame                   
+20000806  ui32Adjust_Direction              
+20000807  ui32Adjust_Speed                  
+200007fc  ui32Load                          
+20000800  ui32PWMClock                      
+0000934c  ulMaxSyscallInterruptPriority     
+000086c1  ulPortGetIPSR                     
+0000846b  uxListRemove                      
+00008389  vListInitialise                   
+000083b9  vListInitialiseItem               
+00008405  vListInsert                       
+000083c9  vListInsertEnd                    
+0000877d  vPortEnableVFP                    
+000082ed  vPortEndScheduler                 
+000082ef  vPortEnterCritical                
+0000830f  vPortExitCritical                 
+00008739  vPortSVCHandler                   
+0000834b  vPortSetupTimerInterrupt          
+00008759  vPortStartFirstTask               
+00006a5d  vTaskSwitchContext                
+00008953  validateSignalID                  
+20000b94  virtual_CanIf                     
+20000bf8  virtual_CanTp_rx                  
+20000c24  virtual_CanTp_tx                  
+20000bc4  virtual_com                       
+000086d9  xPortPendSVHandler                
+000082b7  xPortStartScheduler               
+00008325  xPortSysTickHandler               
+00006a11  xTaskIncrementTick                
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                              
+-------   ----                              
+00000000  __TI_static_base__                
+00000000  g_pfnVectors                      
+00000200  __STACK_SIZE                      
+00000283  Can_MainFunction_Mode             
+0000037d  Can_GetControllerErrorState       
+00000489  Can_Write                         
+00000b85  Can_SetBaudrate                   
+00000ce5  Can_DisableControllerInterrupts   
+00000d8d  Can_EnableControllerInterrupts    
+00000e41  Can_SetControllerMode             
+0000131d  Can_GetControllerMode             
+00001395  Can0_InterruptHandler             
+0000158d  Can1_InterruptHandler             
+0000176d  CANIntHandler                     
+000017b5  Can_Init                          
+00001831  Can_DeInit                        
+000019d5  SysCtlSRAMSizeGet                 
+000019df  SysCtlFlashSizeGet                
+00001a0b  SysCtlFlashSectorSizeGet          
+00001a31  SysCtlPeripheralPresent           
+00001a71  SysCtlPeripheralReady             
+00001ab1  SysCtlPeripheralPowerOn           
+00001aed  SysCtlPeripheralPowerOff          
+00001b29  SysCtlPeripheralReset             
+00001bb1  SysCtlPeripheralEnable            
+00001bed  SysCtlPeripheralDisable           
+00001c31  SysCtlPeripheralSleepEnable       
+00001c75  SysCtlPeripheralSleepDisable      
+00001cb1  SysCtlPeripheralDeepSleepEnable   
+00001d01  SysCtlPeripheralDeepSleepDisable  
+00001d49  SysCtlPeripheralClockGating       
+00001d9d  SysCtlIntRegister                 
+00001db5  SysCtlIntUnregister               
+00001dc5  SysCtlIntEnable                   
+00001dd9  SysCtlIntDisable                  
+00001df1  SysCtlIntClear                    
+00001e01  SysCtlIntStatus                   
+00001e1d  SysCtlLDOSleepSet                 
+00001e2d  SysCtlLDOSleepGet                 
+00001e33  SysCtlLDODeepSleepSet             
+00001e43  SysCtlLDODeepSleepGet             
+00001e49  SysCtlSleepPowerSet               
+00001e5d  SysCtlDeepSleepPowerSet           
+00001e6d  SysCtlReset                       
+00001e75  SysCtlSleep                       
+00001e7d  SysCtlDeepSleep                   
+00001e99  SysCtlResetCauseGet               
+00001e9f  SysCtlResetCauseClear             
+00001eb3  SysCtlMOSCConfigSet               
+00001ec9  SysCtlPIOSCCalibrate              
+00001f19  SysCtlResetBehaviorSet            
+00001f29  SysCtlResetBehaviorGet            
+00001f79  SysCtlClockFreqSet                
+00002271  SysCtlClockSet                    
+00002441  SysCtlClockGet                    
+000025e7  SysCtlDeepSleepClockSet           
+00002605  SysCtlDeepSleepClockConfigSet     
+0000268f  SysCtlPWMClockSet                 
+000026a9  SysCtlPWMClockGet                 
+000026bf  SysCtlGPIOAHBEnable               
+000026db  SysCtlGPIOAHBDisable              
+000026f7  SysCtlUSBPLLEnable                
+00002703  SysCtlUSBPLLDisable               
+00002715  SysCtlVoltageEventConfig          
+00002725  SysCtlVoltageEventStatus          
+00002731  SysCtlVoltageEventClear           
+00002749  SysCtlVCOGet                      
+00002805  SysCtlNMIStatus                   
+00002819  SysCtlNMIClear                    
+00002835  SysCtlClockOutConfig              
+00002851  SysCtlAltClkConfig                
+00002895  canTansmitPaddingHelper           
+0000290f  canReceivePaddingHelper           
+00002995  copySegmentToPduRRxBuffer         
+000029f9  copySegmentToLocalRxBuffer        
+00002a5b  getFrameType                      
+00002af9  getPduLength                      
+00002b81  calcRequiredProtocolFrameType     
+00002be9  handleSingleFrame                 
+00002cef  handleFirstFrame                  
+00002e5b  handleFlowControlFrame            
+00002f27  handleConsecutiveFrame            
+00003113  handleNextTxFrameSent             
+00003221  sendFlowControlFrame              
+0000336f  sendNextTxFrame                   
+0000354b  GPIODirModeSet                    
+000035a7  GPIODirModeGet                    
+000035f3  GPIOIntTypeSet                    
+00003697  GPIOIntTypeGet                    
+0000372d  GPIOPadConfigSet                  
+00003967  GPIOPadConfigGet                  
+00003ab9  GPIOIntEnable                     
+00003ad3  GPIOIntDisable                    
+00003aed  GPIOIntStatus                     
+00003b0f  GPIOIntClear                      
+00003b23  GPIOIntRegister                   
+00003b41  GPIOIntUnregister                 
+00003b5b  GPIOIntRegisterPin                
+00003b89  GPIOIntUnregisterPin              
+00003bad  GPIOPinRead                       
+00003bc5  GPIOPinWrite                      
+00003be5  GPIOPinTypeADC                    
+00003c09  GPIOPinTypeCAN                    
+00003c2d  GPIOPinTypeComparator             
+00003c51  GPIOPinTypeComparatorOutput       
+00003c75  GPIOPinTypeDIVSCLK                
+00003c99  GPIOPinTypeEPI                    
+00003cbd  GPIOPinTypeEthernetLED            
+00003ce1  GPIOPinTypeEthernetMII            
+00003d05  GPIOPinTypeGPIOInput              
+00003d29  GPIOPinTypeGPIOOutput             
+00003d4d  GPIOPinTypeGPIOOutputOD           
+00003d71  GPIOPinTypeHibernateRTCCLK        
+00003d95  GPIOPinTypeI2C                    
+00003db9  GPIOPinTypeI2CSCL                 
+00003ddd  GPIOPinTypeLCD                    
+00003e01  GPIOPinTypeOneWire                
+00003e25  GPIOPinTypePWM                    
+00003e49  GPIOPinTypeQEI                    
+00003e6d  GPIOPinTypeSSI                    
+00003e91  GPIOPinTypeTimer                  
+00003eb5  GPIOPinTypeTrace                  
+00003ed9  GPIOPinTypeUART                   
+00003efd  GPIOPinTypeUSBAnalog              
+00003f21  GPIOPinTypeUSBDigital             
+00003f45  GPIOPinTypeWakeHigh               
+00003f6b  GPIOPinTypeWakeLow                
+00003f91  GPIOPinWakeStatus                 
+00003fa1  GPIOPinConfigure                  
+00003fff  GPIODMATriggerEnable              
+0000401d  GPIODMATriggerDisable             
+0000403b  GPIOADCTriggerEnable              
+00004059  GPIOADCTriggerDisable             
+00004185  CANInit                           
+00004201  CANEnable                         
+00004215  CANDisable                        
+00004229  CANBitTimingGet                   
+00004291  CANBitRateSet                     
+0000435d  CANBitTimingSet                   
+000043eb  CANIntRegister                    
+00004409  CANIntUnregister                  
+00004423  CANIntEnable                      
+00004439  CANIntDisable                     
+0000444f  CANIntStatus                      
+00004499  CANIntClear                       
+000044d3  CANRetrySet                       
+00004505  CANRetryGet                       
+00004521  CANStatusGet                      
+000045a7  CANErrCntrGet                     
+000045dd  CANMessageSet                     
+0000486f  CANMessageGet                     
+00004a79  CANMessageClear                   
+00004aa9  Com_Init                          
+00004c57  Com_MainFunctionRx                
+00004d95  Com_MainFunctionTx                
+00004ecd  Com_SendSignal                    
+00004fb3  Com_ReceiveSignal                 
+00005011  Com_CopyTxData                    
+000050ad  Com_CopyRxData                    
+00005141  Com_TriggerIPDUSend               
+00005209  Com_RxIndication                  
+00005273  Com_StartOfReception              
+000052ff  Com_TpRxIndication                
+00005363  Com_TpTxConfirmation              
+0000541d  PWMGenConfigure                   
+00005467  PWMGenPeriodSet                   
+00005497  PWMGenPeriodGet                   
+000054c1  PWMGenEnable                      
+000054db  PWMGenDisable                     
+000054f5  PWMPulseWidthSet                  
+0000553f  PWMPulseWidthGet                  
+00005589  PWMDeadBandEnable                 
+000055c1  PWMDeadBandDisable                
+000055dd  PWMSyncUpdate                     
+000055ef  PWMSyncTimeBase                   
+00005601  PWMOutputState                    
+00005633  PWMOutputInvert                   
+00005665  PWMOutputFaultLevel               
+00005697  PWMOutputFault                    
+000057c9  PWMGenIntRegister                 
+000057f1  PWMGenIntUnregister               
+00005857  PWMFaultIntRegister               
+00005875  PWMFaultIntUnregister             
+0000588f  PWMGenIntTrigEnable               
+000058ad  PWMGenIntTrigDisable              
+000058cb  PWMGenIntStatus                   
+000058f5  PWMGenIntClear                    
+0000590d  PWMIntEnable                      
+00005925  PWMIntDisable                     
+0000593d  PWMFaultIntClear                  
+0000594f  PWMIntStatus                      
+0000596f  PWMFaultIntClearExt               
+0000598d  PWMGenFaultConfigure              
+000059bd  PWMGenFaultTriggerSet             
+000059e7  PWMGenFaultTriggerGet             
+00005a0b  PWMGenFaultStatus                 
+00005a41  PWMGenFaultClear                  
+00005a77  PWMClockSet                       
+00005a97  PWMClockGet                       
+00005ac1  PWMOutputUpdateMode               
+00005b35  CanIf_Init                        
+00005b89  CanIf_SetPduMode                  
+00005bfb  CanIf_GetPduMode                  
+00005c3f  CanIf_SetControllerMode           
+00005cc1  CanIf_GetControllerMode           
+00005d0d  CanIf_FindTxPduEntry              
+00005d75  CanIf_Transmit                    
+00005e3d  CanIf_FindHrhChannel              
+00005eb9  CanIf_FindRxPduEntry              
+00005f23  Get_User_RxIndication_Name        
+00005f49  Get_User_RxIndication             
+00005f95  CanIf_RxIndication                
+00006125  CanIf_TxConfirmation              
+000061a5  initTx15765RuntimeData            
+000061e7  initRx15765RuntimeData            
+0000622f  CanTp_RxIndication                
+00006325  CanTp_Init                        
+000063f1  CanTp_Transmit                    
+0000654b  CanTp_Shutdown                    
+00006561  CanTp_MainFunction                
+000067bd  CanTp_TxConfirmation              
+00006811  IdleTask                          
+00006979  AddTaskToReadyList                
+000069c7  BlockTask                         
+000069f1  InitTask                          
+00006a11  xTaskIncrementTick                
+00006a5d  vTaskSwitchContext                
+00006b09  StartOS                           
+00006c75  ActivateTask                      
+00006cc1  TerminateTask                     
+00006d6d  ChainTask                         
+00006da9  GetTaskID                         
+00006dcd  GetTaskState                      
+00006ea1  InitCounter                       
+00006ebf  CounterIncrementHook              
+00006fe5  InitAlarm                         
+00007009  AlarmHook                         
+00007195  GetAlarm                          
+00007215  GetAlarmBase                      
+0000724d  SetRelAlarm                       
+0000730d  SetAbsAlarm                       
+00007391  CancelAlarm                       
+000073e5  Com_PackSignalsToPdu              
+00007449  Com_UnPackSignalsFromPdu          
+000074ad  Com_WriteSignalDataToPduBuffer    
+0000771d  Com_ReadSignalDataFromPduBuffer   
+00007909  Com_WriteSignalDataToSignalBuffer 
+0000793d  Com_ReadSignalDataFromSignalBuffer
+00007977  IntMasterEnable                   
+00007987  IntMasterDisable                  
+00007997  IntRegister                       
+000079e9  IntUnregister                     
+000079fd  IntPriorityGroupingSet            
+00007a17  IntPriorityGroupingGet            
+00007a4f  IntPrioritySet                    
+00007a9f  IntPriorityGet                    
+00007ac3  IntEnable                         
+00007b35  IntDisable                        
+00007ba7  IntIsEnabled                      
+00007c2d  IntPendSet                        
+00007c9d  IntPendClear                      
+00007ceb  IntPriorityMaskSet                
+00007cf7  IntPriorityMaskGet                
+00007cff  IntTrigger                        
+00007d35  CheckEventTask                    
+00007d75  SetEvent                          
+00007e09  WaitEvent                         
+00007e69  GetEvent                          
+00007ed7  ClearEvent                        
+00007f21  Adjust_speed                      
+000080e9  get_ID                            
+000081df  get_type                          
+0000824d  pxPortInitialiseStack             
+000082b7  xPortStartScheduler               
+000082ed  vPortEndScheduler                 
+000082ef  vPortEnterCritical                
+0000830f  vPortExitCritical                 
+00008325  xPortSysTickHandler               
+0000834b  vPortSetupTimerInterrupt          
+00008389  vListInitialise                   
+000083b9  vListInitialiseItem               
+000083c9  vListInsertEnd                    
+00008405  vListInsert                       
+0000846b  uxListRemove                      
+000084b5  PduR_ComTransmit                  
+0000850b  PduR_CanIfRxIndication            
+00008529  PduR_CanTpCopyRxData              
+0000854f  PduR_CanTpRxIndication            
+0000856f  PduR_CanTpStartOfReception        
+00008599  PduR_CanTpCopyTxData              
+000085cd  SimpleDelay                       
+000085d7  PWMInit                           
+00008689  SpeedAndDirection                 
+000086c1  ulPortGetIPSR                     
+000086d9  xPortPendSVHandler                
+00008739  vPortSVCHandler                   
+00008759  vPortStartFirstTask               
+0000877d  vPortEnableVFP                    
+0000878d  Adjust_direction                  
+0000883d  __aeabi_memcpy                    
+0000883d  __aeabi_memcpy4                   
+0000883d  __aeabi_memcpy8                   
+0000883d  memcpy                            
+000088d9  __aeabi_memclr                    
+000088d9  __aeabi_memclr4                   
+000088d9  __aeabi_memclr8                   
+000088db  __aeabi_memset                    
+000088db  __aeabi_memset4                   
+000088db  __aeabi_memset8                   
+000088e1  memset                            
+00008953  validateSignalID                  
+0000896d  power                             
+000089c5  Timer0A_Init                      
+00008a0b  Timer0A_Handler                   
+00008a35  __TI_decompress_lzss              
+00008a9d  main                              
+00008ab5  OS_T1                             
+00008abd  INTERNAL_OS_T1                    
+00008af9  __aeabi_d2iz                      
+00008b41  __TI_auto_init_nobinit_nopinit    
+00008b85  __aeabi_d2uiz                     
+00008bc9  CPUcpsid                          
+00008bd5  CPUprimask                        
+00008bdf  CPUcpsie                          
+00008beb  CPUwfi                            
+00008bef  CPUbasepriSet                     
+00008bfd  CPUbasepriGet                     
+00008c09  CanReceiveMessage                 
+00008c41  _c_int00_noargs                   
+00008c75  InitGPIO                          
+00008ca5  __aeabi_lmul                      
+00008cbd  __TI_decompress_none              
+00008ccb  __TI_zero_init                    
+00008cd7  ResetISR                          
+00008ce3  SysCtlDelay                       
+00008ce9  _system_pre_init                  
+00008ced  C$$EXIT                           
+00008ced  abort                             
+00008ea0  CanContainer                      
+00008f94  MailboxCfg_MAP                    
+0000934c  ulMaxSyscallInterruptPriority     
+00009350  CanTp_RxNSdu                      
+00009440  CanTp_TxNSdu                      
+000094c0  RTE_Event_HeatRegulatorEvent      
+000094c4  RTE_Event_HeatingControllerEvent  
+000094c8  BSW_Event_Com_MainFunctionRx      
+000094cc  BSW_Event_Com_MainFunctionTx      
+000094d0  BSW_Event_CanTp_MainFunction      
+000094d4  T1                                
+000094d8  RTE_Alarm_alarm1                  
+000094dc  RTE_Alarm_alarm2                  
+000094e0  BSW_Alarm_alarm3                  
+000094e4  BSW_Alarm_alarm4                  
+000094e8  BSW_Alarm_alarm5                  
+000094f0  CanTp_Config                      
+00009550  McuPerClockConfigData             
+00009698  __TI_Handler_Table_Base           
+000096a4  __TI_Handler_Table_Limit          
+000096b8  __TI_CINIT_Base                   
+000096d0  __TI_CINIT_Limit                  
+20000000  g_pfnRAMVectors                   
+200006d0  Com_Asu_IPdu                      
+20000708  Message_Confirmation              
+20000768  CounterList                       
+2000077c  DormantAlarmList                  
+20000790  msg                               
+200007b8  msgData                           
+200007c0  CanIf_Global                      
+200007e0  CanIfPrivateCfgInst               
+200007e4  CanIfRxPduCfg_Arr                 
+200007e8  CanIf_ConfigPtr                   
+200007ec  ComConfig                         
+200007f0  Direction                         
+200007f4  Speed                             
+200007f8  break_command                     
+200007fc  ui32Load                          
+20000800  ui32PWMClock                      
+20000804  errFlag                           
+20000805  rxFlag                            
+20000806  ui32Adjust_Direction              
+20000807  ui32Adjust_Speed                  
+20000808  CanTpRunTimeData                  
+20000960  AlarmStruct                       
+20000a50  TaskStruct                        
+20000af0  CounterStruct                     
+20000b2c  pxCurrentTCB                      
+20000b58  EventsInTask                      
+20000b78  real_CanIf                        
+20000b94  virtual_CanIf                     
+20000bb0  real_com                          
+20000bc4  virtual_com                       
+20000bd8  Com_type                          
+20000be8  real_CanTp_rx                     
+20000bf8  virtual_CanTp_rx                  
+20000c08  ComAsuConfiguration               
+20000c1c  real_CanTp_tx                     
+20000c24  virtual_CanTp_tx                  
+20000c30  canif_Comfrimation_Value          
+20000c34  canif_cantp_value                 
+20000c3f  canif_ids                         
+20000c41  cantp_cainf_FC                    
+20000c43  cantp_com_copy_tx                 
+20000c45  cantp_com_rx_or_copy              
+20000c47  com_pdur                          
+20000c4b  canif_PduR_Value                  
+20000c4c  previous_command                  
+20000c50  __stack                           
+20000e50  __STACK_END                       
+20000e50  __STACK_TOP                       
+ffffffff  __TI_pprof_out_hndl               
+ffffffff  __TI_prof_data_size               
+ffffffff  __TI_prof_data_start              
+ffffffff  __binit__                         
+ffffffff  __c_args__                        
+ffffffff  binit                             
+UNDEFED   __mpu_init                        
+UNDEFED   _system_post_cinit                
+
+[417 symbols]
